@@ -2,7 +2,7 @@
 package pers.ljy.background.share.service.impl;
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import pers.ljy.background.share.dao.BaseDao;
 import pers.ljy.background.share.service.BaseService;
@@ -35,8 +35,12 @@ public abstract class BaseServiceImpl<T, KEY extends Serializable> implements Ba
 	}
 
 	@Override
-	public List<T> selectAll() {
-		return getDao().selectAll();
+	public CopyOnWriteArrayList<T> selectAll() {
+		CopyOnWriteArrayList<T> listAll =  getDao().selectAll();
+		if(listAll == null || listAll.isEmpty()){
+			listAll = new CopyOnWriteArrayList<>();
+		}
+		return listAll;
 	}
 
 	@Override

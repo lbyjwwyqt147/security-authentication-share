@@ -1,7 +1,7 @@
 package pers.ljy.background.share.dao;
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 
 /***
@@ -32,7 +32,7 @@ public interface BaseDao<T,KEY extends Serializable> {
     /**
      * 获取全部数据库记录
      */
-    List<T> selectAll();
+    CopyOnWriteArrayList<T> selectAll();
 
     /**
      * 根据主键来更新数据库记录

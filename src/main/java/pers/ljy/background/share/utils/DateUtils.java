@@ -17,7 +17,7 @@ import org.slf4j.LoggerFactory;
  * 完成日期:2017年04月24日 
  * 修改记录:
  * @version 1.0
- * @author liujunyi
+ * @author ljy
  */
 public final class DateUtils {
 

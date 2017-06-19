@@ -143,6 +143,13 @@
 	</dependency>
 	<!-- spring-security 认证包 结束 -->
 	
+	<!-- 对象复制 -->
+	<dependency>
+	    <groupId>net.sf.dozer</groupId>
+	    <artifactId>dozer</artifactId>
+	    <version>5.5.1</version>
+	</dependency>
+	
   </dependencies>
   <build>
     <plugins>

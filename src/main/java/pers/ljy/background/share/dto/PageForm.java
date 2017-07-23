@@ -1,9 +1,14 @@
 package pers.ljy.background.share.dto;
 
+import java.io.Serializable;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class PageForm<T> {
+public class PageForm<T>  implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer total;  //总纪录条数
 	private CopyOnWriteArrayList<T> rows;
 	public Integer getTotal() {

@@ -6,11 +6,6 @@ import java.util.Enumeration;
 import java.util.List;
 import java.util.Vector;
 
-import javax.swing.text.StyledEditorKit.BoldAction;
-
-import org.terracotta.runnel.decoding.Enm;
-
-import scala.annotation.elidable;
 
 /***
  * jsTree 树结果

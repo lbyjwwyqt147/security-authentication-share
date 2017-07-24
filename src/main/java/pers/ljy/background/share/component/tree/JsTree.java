@@ -1,19 +1,12 @@
 package pers.ljy.background.share.component.tree;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Enumeration;
-import java.util.List;
 import java.util.Vector;
 
-import javax.swing.text.StyledEditorKit.BoldAction;
 
-import org.terracotta.runnel.decoding.Enm;
-
-import scala.annotation.elidable;
 
 /***
- * jsTree 树结果
+ * jsTree 树结构容器
  * @author ljy
  *
  */
@@ -42,8 +35,7 @@ public class JsTree extends AbstractTree implements Serializable{
     /**
      * 孩子节点
      */
-    private Vector<JsTree> children = new Vector<>();
-    private Vector<AbstractTree> children1 = new Vector<>();
+    private Vector<AbstractTree> children = new Vector<>();
     /**
      * 其他属性
      */
@@ -120,14 +112,6 @@ public class JsTree extends AbstractTree implements Serializable{
 		this.icon = icon;
 	}
 
-	/*public List<JsTree> getChildren() {
-		return children;
-	}
-
-	public void setChildren(List<JsTree> children) {
-		this.children = children;
-	}
-*/
 	public Object getLi_attr() {
 		return li_attr;
 	}
@@ -144,57 +128,42 @@ public class JsTree extends AbstractTree implements Serializable{
 		this.a_attr = a_attr;
 	}
 
+
+
 	@Override
 	public void add(AbstractTree tree) {
-		children1.add(tree);
+		children.add(tree);
 		
 	}
 
 	@Override
 	public void remove(AbstractTree tree) {
-		children1.remove(tree);
+		children.remove(tree);
 		
 	}
 
 	@Override
 	public AbstractTree getChild(int i) {
-		return children1.get(i);
+		return children.get(i);
 	}
 
-	@Override
-	public AbstractTree getChild(AbstractTree tree) {
-		return children1.get(0);
-	}
 
 	@Override
 	public void operation() {
 		 //容器构件具体业务方法的实现
         //递归调用成员构件的业务方法
-        for(Object obj:children1) {
+        for(Object obj:children) {
             ((AbstractTree)obj).operation();
         }
 		
-	}    
-	
-	/**
-	 * 添加孩子节点
-	 * @param tree
-	 *//*
-	public void add(JsTree tree){
-		this.children.add(tree);
 	}
-    
-	*//**
-	 * 移除节点
-	 * @param tree
-	 *//*
-	public void remove(JsTree tree){
-		this.children.remove(tree);
+
+	public Vector<AbstractTree> getChildren() {
+		return children;
 	}
-	
-	public Enumeration<JsTree> getChildren(){
-		return children.elements();
+
+	public void setChildren(Vector<AbstractTree> children) {
+		this.children = children;
 	}
-    */
 
 }

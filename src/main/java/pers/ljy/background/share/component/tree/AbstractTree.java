@@ -1,6 +1,5 @@
 package pers.ljy.background.share.component.tree;
 
-import pers.ljy.background.share.dto.JsTree;
 
 /***
  * 抽象构建
@@ -24,12 +23,7 @@ public abstract class AbstractTree {
      * @return
      */
     public abstract AbstractTree getChild(int i);     
-    /**
-     * 获取成员
-     * @param tree
-     * @return
-     */
-    public abstract AbstractTree getChild(AbstractTree tree); 
+  
     /**
      * 具体业务方法
      */

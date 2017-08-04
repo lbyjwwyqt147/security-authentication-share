@@ -23,7 +23,7 @@ public class JsTree extends AbstractTree implements Serializable{
 	/**
 	 * 父级
 	 */
-    private String parent;
+  //  private String parent;
     /**
      * 节点名称
      */
@@ -47,38 +47,8 @@ public class JsTree extends AbstractTree implements Serializable{
     
     /**
      * 状态
-     * @author ljy
-     *
      */
-    class state{
-    	//节点是否打开
-    	private boolean opened = false; 
-    	//几点是否禁用
-    	private boolean disabled = false;    
-    	//节点是否默认选择
-    	private boolean selected = false;
-    	
-		public boolean isOpened() {
-			return opened;
-		}
-		public void setOpened(boolean opened) {
-			this.opened = opened;
-		}
-		public boolean isDisabled() {
-			return disabled;
-		}
-		public void setDisabled(boolean disabled) {
-			this.disabled = disabled;
-		}
-		public boolean isSelected() {
-			return selected;
-		}
-		public void setSelected(boolean selected) {
-			this.selected = selected;
-		}   
-    	
-    	
-    }
+    private JsTreeState state;
 
 	public String getId() {
 		return id;
@@ -88,14 +58,14 @@ public class JsTree extends AbstractTree implements Serializable{
 		this.id = id;
 	}
 
-	public String getParent() {
+	/*public String getParent() {
 		return parent;
 	}
 
 	public void setParent(String parent) {
 		this.parent = parent;
 	}
-
+*/
 	public String getText() {
 		return text;
 	}
@@ -166,4 +136,13 @@ public class JsTree extends AbstractTree implements Serializable{
 		this.children = children;
 	}
 
+	public JsTreeState getState() {
+		return state;
+	}
+
+	public void setState(JsTreeState state) {
+		this.state = state;
+	}
+
+	
 }

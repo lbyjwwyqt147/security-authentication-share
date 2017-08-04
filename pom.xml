@@ -1,6 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>security-authentication-share</groupId>
+  <groupId>authentication</groupId>
   <artifactId>security-authentication-share</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
@@ -168,6 +168,13 @@
           <failOnMissingWebXml>false</failOnMissingWebXml>
         </configuration>
       </plugin>
+      <plugin>
+		    <artifactId>maven-deploy-plugin</artifactId>
+		    <version>2.8.2</version>
+		    <configuration>
+		    <altDeploymentRepository>internal.repo::default::file://D:/mvn_repo/com/repo</altDeploymentRepository>
+		    </configuration>
+	  </plugin>
     </plugins>
   </build>
 </project>

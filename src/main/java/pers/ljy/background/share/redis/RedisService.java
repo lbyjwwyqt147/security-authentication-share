@@ -2,6 +2,7 @@ package pers.ljy.background.share.redis;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -127,6 +128,17 @@ public class RedisService {
         HashOperations<String, Object, Object>  hash = redisTemplate.opsForHash();
         return hash.get(key,hashKey);
     }
+    
+    /** 
+     * 根据key获取所有值 
+     *  
+     * @param key 
+     * @return 
+     */  
+    public  Map<Object, Object> hgetAll(String key) {  
+        return redisTemplate.opsForHash().entries(key);  
+    }  
+  
 
     /**
      * 列表添加

@@ -1,5 +1,7 @@
 package pers.ljy.background.share.exception;
 
+import javax.servlet.ServletException;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -42,5 +44,13 @@ public class GlobalExceptionHandler {
 	protected ApiResultView buildErrDataPacket(BusinessException bex) {
 		return null;
 	}
+	
+	@ExceptionHandler
+	@ResponseBody
+	public ApiResultView servletExceptionHandler(ServletException bex){
+		LOG.error(bex.getMessage(), bex);
+		return new ApiResultView(BaseApiResultView.ERROR.getStatus(), bex.getMessage());
+	}
+	
 	
 }
